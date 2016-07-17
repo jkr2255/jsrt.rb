@@ -78,4 +78,9 @@ module JSRT
     Native.load_library lib
   end
 
+  # return runtime for current thread.
+  def self.runtime
+    Runtime.instance
+  end
+
 end

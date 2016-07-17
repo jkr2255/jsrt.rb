@@ -51,8 +51,4 @@ module JSRT
       Native.call :JsCollectGarbage, handle
     end
   end
-
-  def self.runtime
-    Runtime.instance
-  end
 end
