@@ -21,7 +21,7 @@ module JSRT
       ObjectSpace.define_finalizer self, self.class.finalize_proc(@handle_data)
     end
 
-    def initialize_copy
+    def initialize_copy(*)
       raise TypeError, 'JSRT::Runtime cannot be duplicated.'
     end
 

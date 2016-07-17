@@ -19,7 +19,7 @@ module JSRT
       ObjectSpace.define_finalizer self, self.class.finalize_proc
     end
 
-    def initialize_copy
+    def initialize_copy(*)
       raise TypeError, 'JSRT::Context cannot be duplicated.'
     end
 
