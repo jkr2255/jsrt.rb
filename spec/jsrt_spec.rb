@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe Jsrt do
+describe JSRT do
   it 'has a version number' do
-    expect(Jsrt::VERSION).not_to be nil
+    expect(JSRT::VERSION).not_to be nil
   end
 
-  it 'does something useful' do
-    expect(false).to eq(true)
+  it 'has #load_library method' do
+    expect(JSRT).to respond_to(:load_library)
   end
 end

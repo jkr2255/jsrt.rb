@@ -74,7 +74,7 @@ module JSRT
   class LoadError < ::StandardError; end
 
   # select loading library
-  def load_library(lib)
+  def self.load_library(lib)
     Native.load_library lib
   end
 
