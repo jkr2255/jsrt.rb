@@ -42,7 +42,9 @@ module JSRT
     end
 
     def memory_limit=(val)
-      Native.call :JsSetRuntimeMemoryLimit, handle, val.to_int
+      val = val.to_int
+      Native.call :JsSetRuntimeMemoryLimit, handle, val
+      val
     end
 
     def run_gc
