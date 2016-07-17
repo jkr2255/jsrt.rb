@@ -73,5 +73,5 @@ module JSRT
 end
 
 JSRT::TYPES.each do |sym|
-  require "./jsrt/values/#{sym}_value"
+  require "jsrt/values/#{sym}_value"
 end
