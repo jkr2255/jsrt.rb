@@ -6,8 +6,13 @@ module JSRT
   class Runtime
 
     def self.finalize_proc(handle)
+      called = false
       proc do
+        next if called
         Native.call :JsDisposeRuntime, handle.value
+        # for some reasons, this proc may be called multiple times.
+        # To avoid double-free, set called flag.
+        called = true
       end
     end
 
