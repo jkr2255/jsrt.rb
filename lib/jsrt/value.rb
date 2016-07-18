@@ -6,12 +6,16 @@ module JSRT
   class Value
 
     def self.finalize_proc(handle)
+      called = false
       proc do
+        next if called
         Native.call :JsRelease, handle, nil
+        # ensure only once
+        called = true
       end
     end
 
-    def initialize_copy
+    def initialize_copy(*)
       raise TypeError, 'JSRT::Value cannot be duplicated.'
     end
 
