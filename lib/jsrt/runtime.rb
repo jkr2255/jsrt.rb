@@ -1,4 +1,5 @@
 require 'jsrt/constants'
+require 'jsrt/native'
 module JSRT
   # Wrapper class for JSRT runtime.
   # single instance per Thread.

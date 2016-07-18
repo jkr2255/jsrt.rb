@@ -1,4 +1,5 @@
 require 'jsrt/constants'
+require 'jsrt/native'
 require 'jsrt/runtime'
 require 'jsrt/value'
 require 'jsrt/val_to_js'

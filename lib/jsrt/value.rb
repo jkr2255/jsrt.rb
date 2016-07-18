@@ -1,4 +1,5 @@
 require 'jsrt/constants'
+require 'jsrt/native'
 module JSRT
   # handles JavaScript value.
   # immutable because it is a value object.

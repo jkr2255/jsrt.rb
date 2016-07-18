@@ -1,4 +1,5 @@
 require 'json'
+require 'jsrt/native'
 module JSRT
   # Ruby value to JavaScript conversion
   module ValToJs
