@@ -16,6 +16,8 @@ module JSRT
 
     def initialize(runtime = JSRT::Runtime.instance)
       @handle_data = Native.create_context(runtime)
+      # keep runtime at least this context exists
+      @runtime = runtime
       set_context
       ObjectSpace.define_finalizer self, self.class.finalize_proc
     end
