@@ -62,6 +62,7 @@ module JSRT
         'JsStringToPointer(JsValueRef, wchar_t **, size_t *)',
         'JsGetPrototype(JsValueRef, JsValueRef *)',
         'JsGetTrueValue(JsValueRef *)',
+        'JsGetGlobalObject(JsValueRef *)',
         'JsGetFalseValue(JsValueRef *)',
         'JsGetNullValue(JsValueRef *)',
         'JsGetUndefinedValue(JsValueRef *)',

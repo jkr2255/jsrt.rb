@@ -86,7 +86,10 @@ module JSRT
     end
 
     def global_obj
-
+      set_context
+      handle_buf = Native.value 'void *'
+      Native.call :JsGetGlobalObject, handle_buf
+      Value.create self, handle_buf.value
     end
 
     def handle
