@@ -6,7 +6,7 @@ module JSRT
     class ObjectValue < JSRT::Value
 
       def type
-        :number
+        :object
       end
 
       def __proto__
