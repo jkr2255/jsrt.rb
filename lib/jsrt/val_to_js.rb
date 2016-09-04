@@ -50,7 +50,7 @@ module JSRT
     end
 
     def json_to_js(obj)
-      json_parse obj.to_json
+      global_obj.JSON.parse obj.to_json
     end
 
   end

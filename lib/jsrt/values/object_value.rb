@@ -41,7 +41,7 @@ module JSRT
       end
 
       def to_ruby
-        JSON.parse(context.json_stringify(self).to_s)
+        JSON.parse(context.global_obj.JSON.stringify(self).to_s)
       end
 
       def respond_to_missing?(sym, _include_private)

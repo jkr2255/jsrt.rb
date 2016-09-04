@@ -62,20 +62,6 @@ module JSRT
 
     include ValToJs
 
-    def json
-      @json ||= run_script 'JSON'
-    end
-
-    def json_stringify(js_obj)
-      @json_stringify ||= json[:stringify]
-      @json_stringify.call json, js_obj
-    end
-
-    def json_parse(ruby_str)
-      @json_parse ||= json[:parse]
-      @json_parse.call(json, val_to_js(ruby_str))
-    end
-
     def retrieve_exception
       char_buf = Native.value 'char'
       Native.call :JsHasException, char_buf
