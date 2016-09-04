@@ -62,7 +62,7 @@ module JSRT
         sym_s = sym.to_s
         if sym_s.end_with?('=')
           # assignment
-          self[sym_s[0, -1]] = *args
+          self[sym_s[0...-1]] = *args
         else
           call_or_get sym, *args
         end
