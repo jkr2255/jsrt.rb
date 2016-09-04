@@ -9,7 +9,7 @@ module JSRT
       called = false
       proc do
         next if called
-        Native.call :JsRelease, handle, nil
+        Native.call :JsRelease, handle.value, nil
         # ensure only once
         called = true
       end
