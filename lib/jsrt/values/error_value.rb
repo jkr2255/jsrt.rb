@@ -8,17 +8,6 @@ module JSRT
         :error
       end
 
-      def name
-        self[:name].to_s
-      end
-
-      def message
-        self[:message].to_s
-      end
-
-      def stack
-        self[:stack].to_s
-      end
     end
   end
 end

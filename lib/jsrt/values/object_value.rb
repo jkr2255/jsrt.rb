@@ -43,6 +43,30 @@ module JSRT
       def to_ruby
         JSON.parse(context.json_stringify(self).to_s)
       end
+
+      def respond_to_missing?(sym, _include_private)
+        !sym.to_s.end_with?('!', '?')
+      end
+
+      def call_or_get(sym, *args)
+        # get
+        val = self[sym]
+        return val if args.empty? && !val.is_a?(FunctionValue)
+        val.call(self, *args)
+      end
+
+      private :call_or_get
+
+      def method_missing(sym, *args)
+        super unless respond_to_missing?(sym, false)
+        sym_s = sym.to_s
+        if sym_s.end_with?('=')
+          # assignment
+          self[sym_s[0, -1]] = *args
+        else
+          call_or_get sym, *args
+        end
+      end
     end
   end
 end

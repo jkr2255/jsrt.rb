@@ -8,10 +8,6 @@ module JSRT
         :array
       end
 
-      def length
-        self[:length].to_i
-      end
-
       alias to_a to_ruby
 
     end
